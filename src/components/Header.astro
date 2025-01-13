@@ -1,18 +1,18 @@
 ---
-// import { Picture } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 import { SITE_TITLE } from '../consts';
-// import headerImage from '../shared/assets/header.webp';
+import headerImage from '../shared/assets/header.webp';
 ---
 
 <header class="header">
-	<h1 class="header__title"><a href="/" rel="home">{SITE_TITLE}</a></h1>
-	<!-- <div
+	<h1 class="header__title sr-only"><a href="/" rel="home">{SITE_TITLE}</a></h1>
+	<div
 		class="header__image"
 		style={`--im-w: ${headerImage.width}px; --im-h: ${headerImage.height}px;`}
 	>
 		<a href="/" rel="home"><Picture src={headerImage} width={headerImage.width / 2} densities={[1, 2]} alt={SITE_TITLE} /></a>
-	</div> -->
+	</div>
 </header>
 
 <style>
