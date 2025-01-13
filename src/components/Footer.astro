@@ -1,0 +1,94 @@
+<footer class="footer">
+	<div>
+		организатор: <span class="tripcode">!MBoXQBAV7k</span> / <a
+			href="https://twoweeksgame.ru"
+			class="footer__twglink"
+			rel="external">TwoWeeksGame.ru</a
+		>
+	</div>
+
+	<!-- <div class="footer__supporters">
+		<span>информационная поддержка:</span>
+		<ul>
+			<li><a href="https://www.confa.gd" title="confa.gd"><img src="/img/logos/confagd.webp" alt="confa.gd"></a></li>
+			<li><a href="https://2ch.hk" title="Двач"><img src="/img/logos/dvach.svg" alt="Двач"></a></li>
+		</ul>
+	</div> -->
+
+	<div style="margin-top: 5px;">
+		сайт сделан на <a href="https://astro.build">Astro</a>, исходники на <a
+			href="https://github.com/twoweeks/twg27-blog">GitHub</a
+		>
+	</div>
+
+	<!-- <div>
+		дизайн баннера: <a href="https://t.me/tehcojam">Никита Коджем</a>
+	</div> -->
+</footer>
+
+<style>
+	.footer {
+		grid-area: footer;
+
+		padding: 10px;
+
+		border-top: 1px dashed var(--lightgray);
+
+		text-align: center;
+	}
+
+	.footer__twglink:not(:hover) {
+		text-decoration: none;
+	}
+
+	.footer__supporters {
+		display: flex;
+
+		align-items: center;
+		justify-content: center;
+
+		gap: 10px;
+		margin-top: 10px;
+	}
+
+	.footer__supporters ul {
+		display: flex;
+
+		align-items: center;
+		justify-content: center;
+
+		gap: 10px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.footer__supporters li {
+		list-style: none;
+	}
+
+	.footer__supporters li a {
+		display: block;
+		width: 50px;
+		height: 50px;
+	}
+
+	.footer__supporters li a:not(:hover) {
+		filter: grayscale(1);
+	}
+
+	.footer__supporters li img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	@media screen and (max-width: 768px) {
+		.footer__supporters {
+			display: block;
+		}
+	}
+
+	.tripcode {
+		color: #228854;
+	}
+</style>

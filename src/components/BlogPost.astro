@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import FormattedDate from './FormattedDate.astro';
+
+type Props = CollectionEntry<'blog'>['data'] & {
+	slug: string;
+};
+
+const { slug, title, pubDate, updatedDate } = Astro.props;
+---
+
+<article class="article">
+	<h2 id={slug}>{title}</h2>
+
+	<div class="date">
+		<FormattedDate date={pubDate} />
+		{
+			updatedDate && (
+				<span>
+					(обновлено <FormattedDate date={updatedDate} />)
+				</span>
+			)
+		}
+	</div>
+
+	<slot />
+</article>

@@ -1,0 +1,25 @@
+<div class="container">
+	<slot />
+</div>
+
+<style>
+	.container {
+		display: grid;
+
+		width: 100%;
+		max-width: 1000px;
+
+		grid-template:
+			'header header' auto
+			'content sidebar' auto
+			'footer footer' auto / 1fr 250px;
+
+		margin: 0 auto;
+	}
+
+	@media screen and (max-width: 768px) {
+		.container {
+			grid-template: 'header' 'content' 'sidebar' 'footer';
+		}
+	}
+</style>

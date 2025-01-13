@@ -1,0 +1,152 @@
+---
+import { Picture } from 'astro:assets';
+
+interface Props {
+	gamesList: any[];
+}
+
+const { gamesList } = Astro.props;
+---
+
+<div class="games-container">
+	{
+		gamesList.map(gameInfo => (
+			<div class="game">
+				<div class="game__picture">
+					{gameInfo.screenshot ? (
+						<a href={gameInfo.screenshot.src} target="_blank">
+							<Picture src={gameInfo.screenshot} alt={gameInfo.title} loading="lazy" />
+						</a>
+					) : (
+						<a href="javascript:void 0">
+							<img
+								src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"
+								alt="скриншота нет"
+								loading="lazy"
+							/>
+						</a>
+					)}
+				</div>
+
+				<div class="game__info">
+					<h3 class="game__info__title">{gameInfo.title}</h3>
+
+					{gameInfo.tools && (
+						<p class="game__info__tools">Используемые инструменты: {gameInfo.tools}</p>
+					)}
+
+					{gameInfo.genre && <p class="game__info__genre">Жанр: {gameInfo.genre}</p>}
+
+					<p class="game__info__description">{gameInfo.description ?? 'Описания нет'}</p>
+
+					{gameInfo.archive && (
+						<a class="game__info__link" href={gameInfo.archive} target="_blank">
+							<span>скачать</span>
+						</a>
+					)}
+				</div>
+			</div>
+		))
+	}
+</div>
+
+<style is:inline>
+	.games-container .game {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 225px 1fr;
+		padding: 10px;
+		margin-top: 15px;
+		gap: 15px;
+		background-color: #fff;
+		font-size: 0;
+		border: 1px solid #eee;
+		border-radius: 5px;
+	}
+
+	.games-container .game .game__info {
+		font-size: 1rem;
+	}
+
+	.games-container .game .game__picture a {
+		display: block;
+		height: 100%;
+	}
+
+	.games-container .game .game__picture picture {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.games-container .game .game__picture img {
+		max-width: 100%;
+		height: 100%;
+		object-fit: contain;
+		box-shadow: none !important;
+		border: 0;
+		padding: 0;
+	}
+
+	.games-container .game .game__picture[data-empty] {
+		padding: 50px;
+		opacity: 0.5;
+	}
+
+	.games-container .game .game__info__title,
+	.games-container .game .game__info__genre,
+	.games-container .game .game__info__tools,
+	.games-container .game .game__info__description {
+		margin: 0;
+	}
+
+	.games-container .game .game__info__genre,
+	.games-container .game .game__info__tools,
+	.games-container .game .game__info__description,
+	.games-container .game .game__info__link {
+		margin-top: 0.4em;
+	}
+
+	.games-container .game .game__info__tools {
+		font-size: 0.8em;
+	}
+
+	.games-container .game .game__info__link {
+		display: block;
+		padding: 3px;
+		text-decoration: none;
+		background-color: #f3f3f3;
+		color: #000 !important;
+		border-radius: 5px;
+		border: 1px solid #ccc;
+		transition: all 0.2s ease-in-out;
+		font-size: 1.1em;
+		text-align: center;
+		text-transform: uppercase;
+		user-select: none;
+	}
+
+	.games-container .game .game__info__link:hover {
+		opacity: 0.8;
+	}
+
+	.games-container .game .game__info__link span {
+		background-image: url(../shared/assets/download-icon.svg);
+		padding-left: 25px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 20px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.games-container .game {
+			grid-template-rows: 200px 1fr;
+			grid-template-columns: 1fr;
+		}
+		.games-container .game .game__info {
+			padding-left: 0;
+			padding-top: 10px;
+		}
+	}
+</style>

@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'page'>['data'] & {
+	slug: string;
+};
+
+const { slug, title } = Astro.props;
+---
+
+<article class="article">
+	<h2 id={slug}>{title}</h2>
+
+	<slot />
+</article>

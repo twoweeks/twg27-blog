@@ -1,0 +1,49 @@
+---
+// import { Picture } from 'astro:assets';
+
+import { SITE_TITLE } from '../consts';
+// import headerImage from '../shared/assets/header.webp';
+---
+
+<header class="header">
+	<h1 class="header__title"><a href="/" rel="home">{SITE_TITLE}</a></h1>
+	<!-- <div
+		class="header__image"
+		style={`--im-w: ${headerImage.width}px; --im-h: ${headerImage.height}px;`}
+	>
+		<a href="/" rel="home"><Picture src={headerImage} width={headerImage.width / 2} densities={[1, 2]} alt={SITE_TITLE} /></a>
+	</div> -->
+</header>
+
+<style>
+	header {
+		grid-area: header;
+
+		border-bottom: 1px dashed var(--lightgray);
+	}
+
+	.header__title {
+		text-align: center;
+		font-size: 4.5em;
+	}
+	.header__title a {
+		text-decoration: none;
+	}
+	.header__title a:hover,
+	.header__title a:focus {
+		text-decoration: underline;
+	}
+
+	.header__image a {
+		display: block;
+	}
+
+	.header__image img {
+		display: block;
+
+		width: 100%;
+		height: calc(100% / (var(--im-w) / var(--im-h)));
+
+		object-fit: contain;
+	}
+</style>

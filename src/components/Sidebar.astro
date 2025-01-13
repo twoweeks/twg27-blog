@@ -1,0 +1,61 @@
+---
+const moneyFormatter = new Intl.NumberFormat('ru', {
+	style: 'currency',
+	currency: 'RUB',
+	minimumFractionDigits: 0,
+	maximumFractionDigits: 0,
+});
+
+const prizeFund = 20_000;
+---
+
+<aside class="sidebar">
+	<div style="font-size: 1.4em; font-weight: bold;">
+		призовой фонд:<br /><span style="font-size: 1.5em">{moneyFormatter.format(prizeFund)}</span>
+	</div>
+
+	<div>
+		<a href="/page/rules/">регламент конкурса</a>
+	</div>
+
+	<div>
+		<p style="margin-bottom: 0;">обсуждение конкурса:</p>
+		<ul style="margin-top: 0;">
+			<li><a href="https://2ch.hk/gd/">закреплённый тред в /gd/</a></li>
+			<li><a href="https://discord.gg/FNFnJVCZA9">сервер в Discord</a></li>
+			<li><a href="https://t.me/gdchat">чат в Telegram</a></li>
+		</ul>
+	</div>
+
+	<div>
+		<ul>
+			<li><a href="https://twoweeksgame26.blogspot.com">прошлый конкурс</a></li>
+		</ul>
+	</div>
+</aside>
+
+<style>
+	.sidebar {
+		grid-area: sidebar;
+
+		padding: 15px 10px 10px;
+
+		border-left: 1px dashed var(--lightgray);
+
+		text-align: center;
+	}
+
+	.sidebar div:not(:first-child) {
+		margin-top: 15px;
+	}
+
+	.sidebar ul {
+		list-style: none;
+
+		padding: 0;
+	}
+
+	.sidebar ul li {
+		margin-bottom: 0.25em;
+	}
+</style>
