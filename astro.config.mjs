@@ -8,4 +8,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://27.twoweeks.ru',
 	integrations: [mdx(), sitemap()],
+	compressHTML: true,
 });
