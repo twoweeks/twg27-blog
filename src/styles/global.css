@@ -214,6 +214,27 @@ a[href].direct-link:focus:visited,
 	color: #aaa;
 }
 
+/* Social links */
+
+a[href*="discord.com"]::before, a[href*="discord.gg"]::before, a[href*="t.me"]::before {
+	content: '';
+
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	margin-right: 2.5px;
+
+	background-size: contain;
+}
+
+a[href*="discord.com"]::before, a[href*="discord.gg"]::before {
+	background-image: url(https://www.google.com/s2/favicons?domain=discord.com);
+}
+
+a[href*="t.me"]::before {
+	background-image: url(https://www.google.com/s2/favicons?domain=telegram.org);
+}
+
 .sr-only {
 	border: 0;
 	padding: 0;
