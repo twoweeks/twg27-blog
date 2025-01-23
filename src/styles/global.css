@@ -216,7 +216,9 @@ a[href].direct-link:focus:visited,
 
 /* Social links */
 
-a[href*="discord.com"]::before, a[href*="discord.gg"]::before, a[href*="t.me"]::before {
+a[href*='discord.com']::before,
+a[href*='discord.gg']::before,
+a[href*='t.me']::before {
 	content: '';
 
 	display: inline-block;
@@ -227,11 +229,12 @@ a[href*="discord.com"]::before, a[href*="discord.gg"]::before, a[href*="t.me"]::
 	background-size: contain;
 }
 
-a[href*="discord.com"]::before, a[href*="discord.gg"]::before {
+a[href*='discord.com']::before,
+a[href*='discord.gg']::before {
 	background-image: url(https://www.google.com/s2/favicons?domain=discord.com);
 }
 
-a[href*="t.me"]::before {
+a[href*='t.me']::before {
 	background-image: url(https://www.google.com/s2/favicons?domain=telegram.org);
 }
 

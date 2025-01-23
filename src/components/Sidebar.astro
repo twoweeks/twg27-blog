@@ -1,17 +1,15 @@
 ---
-const moneyFormatter = new Intl.NumberFormat('ru', {
-	style: 'currency',
-	currency: 'RUB',
-	minimumFractionDigits: 0,
-	maximumFractionDigits: 0,
-});
+import { donations } from '../data/donations';
+import { parseRoubles, formatRoubles } from '../utils/money';
 
-const prizeFund = 30_000;
+const prizeFund = donations
+	.map(value => parseRoubles(value.amountRoubles))
+	.reduce((acc, currentAmount) => acc + currentAmount, 0);
 ---
 
 <aside class="sidebar">
 	<div style="font-size: 1.4em; font-weight: bold;">
-		призовой фонд:<br /><span style="font-size: 1.5em">{moneyFormatter.format(prizeFund)}</span>
+		призовой фонд:<br /><span style="font-size: 1.5em">{formatRoubles(prizeFund)}</span>
 	</div>
 
 	<div>
@@ -23,7 +21,11 @@ const prizeFund = 30_000;
 		<ul style="margin-top: 0;">
 			<li><a href="https://discord.gg/FNFnJVCZA9">сервер в Discord</a></li>
 			<li><a href="https://t.me/+PTOLW-fGfPUxMmM6">чат в Telegram</a></li>
-			<li>треды: <a href="https://2ch.hk/gd/res/994381.html">Двач</a>, <a href="https://iichan.lol/vg/res/819510.html">Ычан</a></li>
+			<li>
+				треды: <a href="https://2ch.hk/gd/res/994381.html">Двач</a>, <a
+					href="https://iichan.lol/vg/res/819510.html">Ычан</a
+				>
+			</li>
 		</ul>
 	</div>
 

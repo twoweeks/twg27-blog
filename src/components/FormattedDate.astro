@@ -1,4 +1,6 @@
 ---
+import { formatDate } from '../utils/date';
+
 interface Props {
 	date: Date;
 	mini?: boolean;
@@ -8,11 +10,7 @@ const { date, mini } = Astro.props;
 ---
 
 <time class={mini ? 'mini-time' : null} datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('ru', {
-			dateStyle: 'medium',
-		})
-	}
+	{formatDate(date)}
 </time>
 
 <style>

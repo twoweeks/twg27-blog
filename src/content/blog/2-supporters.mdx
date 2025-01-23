@@ -4,9 +4,20 @@ description: 'Обновляемый список пожертвований в 
 pubDate: '15 Jan 2025'
 ---
 
+import { donations } from '../../data/donations';
+import { formatDate } from '../../utils/date';
+import { parseRoubles, formatRoubles } from '../../utils/money';
+
 В этом посте будут собраны все пожертвования в призовой фонд конкурса. Список обновляется.
 
-- 15.01.2025 · 10 000 ₽ · Аноним · без комментария
-- 11.01.2025 · 20 000 ₽ · Организатор · <q>Начальный призовой фонд</q>
+<ul>
+	{donations.map(donation => (
+		<li>
+			{formatDate(donation.dateIso, 'short')} · {formatRoubles(donation.amountRoubles, 'long')} ·{' '}
+			{donation.nickname || 'Аноним'} ·{' '}
+			{donation.comment ? <q>{donation.comment}</q> : 'без комментария'}
+		</li>
+	))}
+</ul>
 
 Спасибо всем за [поддержку конкурса](/page/rules/#-о-призовом-фонде)!
