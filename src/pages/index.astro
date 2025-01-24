@@ -17,9 +17,9 @@ const posts = (await getCollection('blog')).sort(
 
 			<div>
 				<TimerToDate
-					date="2025-01-24T12:00:00+03:00"
-					text="До начала конкурса осталось"
-					endText="Конкурс стартовал! Обновите страницу"
+					date="2025-02-01T00:00:00+03:00"
+					text="Срок отправки демоверсий"
+					endText="Время для отправки демоверсий вышло"
 				/>
 			</div>
 
@@ -55,16 +55,14 @@ const posts = (await getCollection('blog')).sort(
 				posts.map(post => (
 					<li class="post">
 						<div>
-							<a href={`/blog/${post.slug}/`} class="post__link">
-								{post.data.title}
-							</a>{' '}
+							{/* prettier-ignore */}
+							<a href={`/blog/${post.slug}/`} class="post__link">{post.data.title}</a>{' '}
 							<FormattedDate date={post.data.pubDate} mini />
 						</div>
 						<div>
 							{post.data.description ? `${post.data.description} – ` : ''}
-							<a href={`/blog/${post.slug}/`} class="post__link">
-								читать далее
-							</a>
+							{/* prettier-ignore */}
+							<a href={`/blog/${post.slug}/`} class="post__link">читать далее</a>
 						</div>
 					</li>
 				))
