@@ -7,6 +7,18 @@ type Donation = {
 
 export const donations = [
 	{
+		dateIso: '2025-01-11',
+		amountRoubles: '2476.86',
+		nickname: 'Организатор',
+		comment: 'Для круглой суммы',
+	},
+	{
+		dateIso: '2025-01-25',
+		amountRoubles: 10_000,
+		nickname: 'Нульч',
+		comment: 'На фонд конкурса',
+	},
+	{
 		dateIso: '2025-01-23',
 		amountRoubles: 2_000,
 		nickname: null,
