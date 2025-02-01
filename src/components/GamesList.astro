@@ -1,8 +1,11 @@
 ---
 import { Picture } from 'astro:assets';
 
+import { type GameEntry } from '../types/game';
+import downloadIcon from '../assets/shared/download-icon.svg';
+
 interface Props {
-	gamesList: any[];
+	gamesList: GameEntry[];
 }
 
 const { gamesList } = Astro.props;
@@ -15,7 +18,13 @@ const { gamesList } = Astro.props;
 				<div class="game__picture">
 					{gameInfo.screenshot ? (
 						<a href={gameInfo.screenshot.src} target="_blank">
-							<Picture src={gameInfo.screenshot} alt={gameInfo.title} loading="lazy" />
+							<Picture
+								src={gameInfo.screenshot}
+								width={225}
+								densities={[1, 2]}
+								alt={gameInfo.title}
+								loading="lazy"
+							/>
 						</a>
 					) : (
 						<a href="javascript:void 0">
@@ -31,11 +40,11 @@ const { gamesList } = Astro.props;
 				<div class="game__info">
 					<h3 class="game__info__title">{gameInfo.title}</h3>
 
+					{gameInfo.genre && <p class="game__info__genre">Жанр: {gameInfo.genre}</p>}
+
 					{gameInfo.tools && (
 						<p class="game__info__tools">Используемые инструменты: {gameInfo.tools}</p>
 					)}
-
-					{gameInfo.genre && <p class="game__info__genre">Жанр: {gameInfo.genre}</p>}
 
 					<p class="game__info__description">{gameInfo.description ?? 'Описания нет'}</p>
 
@@ -50,7 +59,7 @@ const { gamesList } = Astro.props;
 	}
 </div>
 
-<style is:inline>
+<style define:vars={{ downloadIconImage: `url(${downloadIcon.src})` }}>
 	.games-container .game {
 		display: grid;
 		grid-template-rows: 1fr;
@@ -132,7 +141,7 @@ const { gamesList } = Astro.props;
 	}
 
 	.games-container .game .game__info__link span {
-		background-image: url(../assets/shared/download-icon.svg);
+		background-image: var(--downloadIconImage);
 		padding-left: 25px;
 		background-repeat: no-repeat;
 		background-position: left center;

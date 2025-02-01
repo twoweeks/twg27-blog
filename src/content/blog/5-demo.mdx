@@ -1,0 +1,15 @@
+---
+title: 'Демоверсии'
+pubDate: '1 Feb 2025'
+---
+
+import GamesList from '../../components/GamesList.astro';
+import { games } from '../../data/games-demo.ts';
+
+Всего на конкурс было отправлено {games.length} демоверсий игр.
+
+Финальную версию игры нужно отправить до **7 февраля, 23:59 МСК** включительно.
+
+Скачать игры одним архивом - [disk.yandex.ru](https://disk.yandex.ru/d/I_ZITTmFWq3INA).
+
+<GamesList gamesList={games} />

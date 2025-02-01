@@ -10,7 +10,7 @@ const { date, mini } = Astro.props;
 ---
 
 <time class={mini ? 'mini-time' : null} datetime={date.toISOString()}>
-	{formatDate(date)}
+	{formatDate(date, 'long')}
 </time>
 
 <style>
