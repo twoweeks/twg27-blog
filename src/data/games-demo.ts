@@ -420,12 +420,12 @@ export const games: GameEntry[] = [
 		archive: 'https://disk.yandex.ru/d/Nc5B7rOsdleHGA',
 		screenshot: (await import('../assets/images/demo-post/moto.png')).default,
 	},
-	// {
-	// 	title: 'TWG 27 game',
-	// 	genre: null,
-	// 	tools: null,
-	// 	description: null,
-	// 	archive: '',
-	// 	screenshot: (await import('../assets/images/demo-post/game.jpg')).default,
-	// },
+	{
+		title: 'TWG 27 game',
+		genre: null,
+		tools: null,
+		description: null,
+		archive: 'https://disk.yandex.ru/d/5NBIoPvnOXPRdA',
+		screenshot: (await import('../assets/images/demo-post/game.jpg')).default,
+	},
 ];
