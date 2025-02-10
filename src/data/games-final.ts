@@ -150,7 +150,7 @@ export const games: GameEntry[] = [
 		genre: '(Недо)хоррор, поиск аномалий',
 		tools: 'Unity',
 		description: 'Ищи аномалии, продвигайся по этажам',
-		archive: '',
+		archive: 'https://disk.yandex.ru/d/5c0S63Bu9i5lzA',
 		screenshot: (await import('../assets/images/final-post/echo.png')).default,
 	},
 	{
@@ -159,7 +159,7 @@ export const games: GameEntry[] = [
 		tools: 'godot',
 		description:
 			'Из-за аномалии этаж КЛ-7 изолирован от остальных этажей гигахруща. Недавно был захвачен кабинет генсека, а стражи порядка превратились в мародёров и убийц. Ты - один из бывших ликвидаторов, и твоя цель - покинуть этаж.',
-		archive: 'https://disk.yandex.ru/d/5c0S63Bu9i5lzA',
+		archive: 'https://disk.yandex.ru/d/fEHe9T6FCsoWqA',
 		screenshot: (await import('../assets/images/final-post/escape-from-kletka.png')).default,
 	},
 	{
