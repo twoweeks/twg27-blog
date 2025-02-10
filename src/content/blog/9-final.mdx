@@ -1,0 +1,15 @@
+---
+title: 'Финальные версии'
+pubDate: '11 Feb 2025'
+---
+
+import GamesList from '../../components/GamesList.astro';
+import { games } from '../../data/games-final.ts';
+
+Всего на конкурс было отправлено {games.length} демоверсий игр.
+
+Участникам даётся время поиграть во всё, или посмотреть стримы, до пятницы (14 февраля). Затем им на почты, с которых были отправлены финальные версии, будет отправлена форма для голосования, которое будет длиться ещё 2 дня.
+
+Скачать игры одним архивом - [drive.google.com](https://drive.google.com/file/d/1Z4SgYwIPZzSJbivHzMKMhb1XFcKNS3n9/view?usp=sharing) (2 Гб).
+
+<GamesList gamesList={games} />
