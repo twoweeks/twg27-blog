@@ -1,41 +1,45 @@
 ---
 import { Picture } from 'astro:assets';
+
+import digitalBondageScreenshot from '../assets/images/results-post/digital-bondage.jpg'
+import lifeCrossingScreenshot from '../assets/images/results-post/life-crossing.jpg'
+import voVseScreenshot from '../assets/images/results-post/vo-vse.jpg'
 ---
 
 <div style="margin-top: 1em; text-align:center;">
 	<div class="place">
-		<!-- <Picture src={} alt="screenshot" /> -->
+		<Picture src={digitalBondageScreenshot} alt="screenshot" />
 
 		<div class="place__text">
 			<span>1 место</span>
 
-			<span style="font-size: 5em;"></span>
+			<span style="font-size: 5em;">Digital Bondage Jailer Angels XXL</span>
 
-			<span>0 рублей</span>
+			<span>30 000 рублей</span>
 		</div>
 	</div>
 
 	<div class="place">
-		<!-- <Picture src={anarchistImg} alt="screenshot" /> -->
+		<Picture src={voVseScreenshot} alt="screenshot" />
 
 		<div class="place__text">
 			<span>2 место</span>
 
-			<span style="font-size: 4.75em;"></span>
+			<span style="font-size: 4.75em;">Во все дыры</span>
 
-			<span>0 рублей</span>
+			<span>18 000 рублей</span>
 		</div>
 	</div>
 
 	<div class="place">
-		<!-- <Picture src={} alt="screenshot" /> -->
+		<Picture src={lifeCrossingScreenshot} alt="screenshot" />
 
 		<div class="place__text">
 			<span>3 место</span>
 
-			<span style="font-size: 4.5em;"></span>
+			<span style="font-size: 4.5em;">Life Crossing</span>
 
-			<span>0 рублей</span>
+			<span>12 000 рублей</span>
 		</div>
 	</div>
 </div>
